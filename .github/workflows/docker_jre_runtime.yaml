@@ -94,4 +94,4 @@ jobs:
           COSIGN_EXPERIMENTAL: "true"
         # This step uses the identity token to provision an ephemeral certificate
         # against the sigstore community Fulcio instance.
-        run: echo "${{ steps.meta.outputs.tags }}" | xargs -I {} cosign sign -a {}@${{ steps.build-and-push.outputs.digest }}
+        run: cosign sign -a ghcr.io/heewon00/jre17-runtime:v1.0.0@${{ steps.build-and-push.outputs.digest }}
